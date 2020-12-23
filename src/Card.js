@@ -8,7 +8,8 @@ export default class Card extends Component {
     super (props)
 
     this.state = {
-      quote: ''
+      quote: '',
+      person: ''
     }
   }
 
@@ -23,7 +24,10 @@ export default class Card extends Component {
     })
 
     Person.getData().then(response => {
-      console.log(response.data)
+      console.log(response.data.results[0].name.first)
+      this.setState({
+        person: response.data.results[0]
+      })
     })
     .catch (e => {
       console.log(e)
@@ -34,6 +38,7 @@ export default class Card extends Component {
     return (
       <div className="card">
         {this.state.quote}
+        {/* {this.state.person} */}
       </div>
     )
 
