@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Card.css";
 import KanyeApi from './Api/KanyeApi'
 import Person from './Api/Person'
+import Picture from './Api/Picture'
 
 export default class Card extends Component {
   constructor(props) {

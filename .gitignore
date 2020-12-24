@@ -24,4 +24,4 @@ yarn-error.log*
 
 # reactjs
 .eslintcache
-debut.log
+debug.log
