@@ -6,7 +6,7 @@ class Gallery extends Component {
   render() {    
     const cards = []
     for (let i = 0; i < 5; i++) {
-      cards.push(<Card />)
+      cards.push(<Card key={i} />)
     }
     return(
       <div>
