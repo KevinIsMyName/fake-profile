@@ -5,7 +5,7 @@ import "./Gallery.css";
 class Gallery extends Component {
   render() {    
     const cards = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 1; i++) {
       cards.push(<Card key={i} />)
     }
     return(
