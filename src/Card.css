@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.fullName {
+  
+}
+
+.quote {
+  font-style: italic
+}
+
+.headshot {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}

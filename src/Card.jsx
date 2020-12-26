@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './Card.css';
 import KanyeApi from './Api/KanyeApi';
 import Person from './Api/Person';
-
+import Image from 'react-bootstrap/Image'
+import Badge from 'react-bootstrap/Badge'
 export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quote: '',
-      person: {},
+      quote: false,
+      person: false,
     };
   }
 
@@ -29,7 +30,6 @@ export default class Card extends Component {
           {
             person: await res.data.results[0],
           },
-          (_) => {console.log(this.state.person)},
         );
       })
       .catch((e) => {
@@ -39,20 +39,25 @@ export default class Card extends Component {
 
   render() {
     // On initial render, there will be no state.person.name b/c GET req not sent yet
-    if (!this.state.person || !this.state.quote) {
+    if (!this.state.person || !this.state.quote || !this.state.person.picture) {
       return null;
     } else {
       return (
         <div className="card">
-          <div>
-            {this.state.person.name.first} {this.state.person.name.last}
+          <Image roundedCircle className="headshot" src={this.state.person.picture.large} />
+          <div className="fullName">
+            <h1><Badge variant="light">{this.state.person.name.first}</Badge> {this.state.person.name.last}</h1>
           </div>
-          <div>
-<<<<<<< HEAD
-            {this.state.quote} —{this.state.person.name.last}, {this.state.person.name.first}
-=======
-            {this.state.quote} —{this.state.person.last}, {this.state.person.first}
->>>>>>> 68f9ea5130f8120d2168de47f39d70f424746234
+          <div className="description">
+            {this.state.person.name.title} {this.state.person.name.first} {this.state.person.name.last} currently lives
+             at {this.state.person.location.street.number} {this.state.person.location.street.name},
+             {this.state.person.location.city}, {this.state.person.location.state}, {this.state.person.location.country}.
+              You can contact {this.state.person.gender === 'male' ? 'him' : 'her'} through email at {this.state.person.email} 
+              or {this.state.person.gender === 'male' ? 'his' : 'her'} phone at {this.state.person.phone}. {this.state.person.gender === 'male' ? 'He' : 'She'} enjoys going to {this.state.person.location.timezone.description} 
+              for vacation.
+          </div>
+          <div className="quote">
+            {this.state.quote} —{this.state.person.name.first} {this.state.person.name.last}
           </div>
         </div>
       );
