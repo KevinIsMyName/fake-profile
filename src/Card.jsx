@@ -48,7 +48,11 @@ export default class Card extends Component {
             {this.state.person.name.first} {this.state.person.name.last}
           </div>
           <div>
+<<<<<<< HEAD
             {this.state.quote} —{this.state.person.name.last}, {this.state.person.name.first}
+=======
+            {this.state.quote} —{this.state.person.last}, {this.state.person.first}
+>>>>>>> 68f9ea5130f8120d2168de47f39d70f424746234
           </div>
         </div>
       );
