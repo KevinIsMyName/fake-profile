@@ -3,12 +3,12 @@ import Card from "./Card"
 import "./Gallery.css";
 
 class Gallery extends Component {
-  render() {    
+  render() {
     const cards = []
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 10; i++) {
       cards.push(<Card key={i} />)
     }
-    return(
+    return (
       <div>
         {cards}
       </div>
