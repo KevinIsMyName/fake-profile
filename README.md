@@ -1,4 +1,6 @@
-# fake-profile [View on Netlify!](https://app.netlify.com/sites/blissful-swirles-c4337f/overview)
+# fake-profile 
+
+[View on Netlify!](https://blissful-swirles-c4337f.netlify.app/)
 
 # Getting Started with Create React App
 
